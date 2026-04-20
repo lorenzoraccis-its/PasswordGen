@@ -15,32 +15,29 @@ def generate_password(
     avoid_ambiguous: bool = False,
 ) -> str:
     password=""
-    lun = 0
-    upper = secrets.choice(string.ascii_uppercase) if use_upper == True else ""
-    lun +=1 if use_upper == True else lun
-    lower = secrets.choice(string.ascii_lowercase)
-    digits = secrets.choice(string.digits)
-    symbols = secrets.choice(string.punctuation)
-    for i in range(length) :
-        pass
-
-
-
-
-
-
+    ambigui = "Il1O0" #da evitare se opzione attiva
+    pool = string.ascii_uppercase + string.ascii_lowercase + string.digits + string.punctuation
+    password +=(secrets.choice(string.ascii_uppercase)) if use_upper == True else ""
+    password +=secrets.choice(string.ascii_lowercase)  if use_lower == True else ""
+    password +=secrets.choice(string.digits)  if use_digits == True else ""
+    password += secrets.choice(string.punctuation) if use_symbols == True else ""
+    minimo = len(password) #cosi non sovrascriviamo i caratteri appena messi
+    if avoid_ambiguous :
+        for i in ambigui :
+            pool = pool.replace(i,"") #rimpiazza i caratteri ambigui della pool con ""
+    for i in range(length-minimo) :
+        password +=secrets.choice(pool)
+    return password
 
 
 
 def build_alphabet(length, use_upper, use_lower, use_digits, use_symbols, avoid_ambiguous) :
-    use_upper = True if use_upper.lower() == "y" or "" else False
-    use_lower = True if use_lower.lower() == "y" or "" else False
-    use_digits = True if use_digits.lower() == "y" or "" else False
-    use_symbols = True if use_symbols.lower() == "y" or "" else False
+    use_upper = True if use_upper.lower() == "y" or use_upper == "" else False
+    use_lower = True if use_lower.lower() == "y" or use_lower == "" else False
+    use_digits = True if use_digits.lower() == "y" or use_digits == "" else False
+    use_symbols = True if use_symbols.lower() == "y" or use_symbols == "" else False
     avoid_ambiguous = True if avoid_ambiguous.lower() == "y" else False
     return length, use_upper, use_lower, use_digits, use_symbols, avoid_ambiguous
-
-
 
 
 
@@ -51,7 +48,7 @@ def __main__():
 2) Profilo custom\n""")
     scelta=input("Scelta : ")
     if scelta=="1":
-        generate_password()
+        print(f"Password : {generate_password()}")
     elif scelta=="2":
         # qua lasciamo scelta all'utente su quali caratteri usare
         length = int(input("Lunghezza password : "))
@@ -60,9 +57,10 @@ def __main__():
         use_digits = input("Numeri Y/n : ")
         use_symbols = input("Simboli Y/n : ")
         avoid_ambiguous = input("Caratteri ambigui y/N : ")
-        build_alphabet(use_upper, use_lower, use_digits, use_symbols, avoid_ambiguous)
+        build_alphabet(length, use_upper, use_lower, use_digits, use_symbols, avoid_ambiguous)
     else:
         print("Scelta non valida")
+    print("\nPassword generata!\n")
 
 
 if __name__ == "__main__":
