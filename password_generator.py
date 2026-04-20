@@ -16,7 +16,15 @@ def generate_password(
 ) -> str:
     password=""
     ambigui = "Il1O0" #da evitare se opzione attiva
-    pool = string.ascii_uppercase + string.ascii_lowercase + string.digits + string.punctuation
+    pool = ""
+    if use_upper :
+        pool+=string.ascii_uppercase
+    if use_lower :
+        pool+=string.ascii_lowercase
+    if use_digits :
+        pool+=string.digits
+    if use_symbols :
+        pool+=string.punctuation
     password +=(secrets.choice(string.ascii_uppercase)) if use_upper == True else ""
     password +=secrets.choice(string.ascii_lowercase)  if use_lower == True else ""
     password +=secrets.choice(string.digits)  if use_digits == True else ""
@@ -31,12 +39,19 @@ def generate_password(
 
 
 
-def build_alphabet(length, use_upper, use_lower, use_digits, use_symbols, avoid_ambiguous) :
-    use_upper = True if use_upper.lower() == "y" or use_upper == "" else False
-    use_lower = True if use_lower.lower() == "y" or use_lower == "" else False
-    use_digits = True if use_digits.lower() == "y" or use_digits == "" else False
-    use_symbols = True if use_symbols.lower() == "y" or use_symbols == "" else False
-    avoid_ambiguous = True if avoid_ambiguous.lower() == "y" else False
+def build_alphabet() :
+    length = int(input("Lunghezza password : "))
+    upper = input("Maiuscole Y/n : ")
+    lower = input("Minuscole Y/n : ")
+    digits = input("Numeri Y/n : ")
+    symbols = input("Simboli Y/n : ")
+    ambiguous = input("Caratteri ambigui Y/n : ")
+    use_upper = True if upper.lower() == "y" or upper == "" else False
+    use_lower = True if lower.lower() == "y" or lower == "" else False
+    use_digits = True if digits.lower() == "y" or digits == "" else False
+    use_symbols = True if symbols.lower() == "y" or symbols == "" else False
+    avoid_ambiguous = True if ambiguous.lower() == "y" or ambiguous == "" else False
+    print("\nPassword generata!\n")
     return length, use_upper, use_lower, use_digits, use_symbols, avoid_ambiguous
 
 
@@ -51,17 +66,9 @@ def __main__():
         print(f"Password : {generate_password()}")
     elif scelta=="2":
         # qua lasciamo scelta all'utente su quali caratteri usare
-        length = int(input("Lunghezza password : "))
-        use_upper = input("Maiuscole Y/n : ")
-        use_lower = input("Minuscole Y/n : ")
-        use_digits = input("Numeri Y/n : ")
-        use_symbols = input("Simboli Y/n : ")
-        avoid_ambiguous = input("Caratteri ambigui y/N : ")
-        build_alphabet(length, use_upper, use_lower, use_digits, use_symbols, avoid_ambiguous)
+        print(f"Password : {generate_password(*build_alphabet())}")
     else:
         print("Scelta non valida")
-    print("\nPassword generata!\n")
-
 
 if __name__ == "__main__":
     __main__()
