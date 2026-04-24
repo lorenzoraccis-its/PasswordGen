@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee192457-d4c9-4af3-a310-d0706685011a" name="Changes" comment="Terzo commit, manca lo shuffle della password, per il resto dovrebbe essere tutto giusto... Test ancora non eseguiti">
+    <list default="true" id="ee192457-d4c9-4af3-a310-d0706685011a" name="Changes" comment="Quarto commit, trasformato &quot;password&quot; in una lista, implementata funzione di shuffle. Test non ancora eseguiti">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/password_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/password_generator.py" afterDir="false" />
     </list>
@@ -51,27 +51,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.password_generator.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.password_generator.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -89,7 +90,7 @@
       <updated>1776429946831</updated>
       <workItem from="1776429947791" duration="9387000" />
       <workItem from="1776690654696" duration="7953000" />
-      <workItem from="1777032429311" duration="550000" />
+      <workItem from="1777032429311" duration="3661000" />
     </task>
     <task id="LOCAL-00001" summary="Primo commit, programma completamente in fase di sviluppo, non funziona e bisogna ancora costruirlo per bene">
       <option name="closed" value="true" />
@@ -115,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776697518774</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Quarto commit, trasformato &quot;password&quot; in una lista, implementata funzione di shuffle. Test non ancora eseguiti">
+      <option name="closed" value="true" />
+      <created>1777033755101</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1777033755101</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,9 +134,10 @@
     <MESSAGE value="Primo commit, programma completamente in fase di sviluppo, non funziona e bisogna ancora costruirlo per bene" />
     <MESSAGE value="Secondo commit, programma ancora in fase di sviluppo" />
     <MESSAGE value="Terzo commit, manca lo shuffle della password, per il resto dovrebbe essere tutto giusto... Test ancora non eseguiti" />
-    <option name="LAST_COMMIT_MESSAGE" value="Terzo commit, manca lo shuffle della password, per il resto dovrebbe essere tutto giusto... Test ancora non eseguiti" />
+    <MESSAGE value="Quarto commit, trasformato &quot;password&quot; in una lista, implementata funzione di shuffle. Test non ancora eseguiti" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quarto commit, trasformato &quot;password&quot; in una lista, implementata funzione di shuffle. Test non ancora eseguiti" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Random$password_generator.coverage" NAME="password_generator Coverage Results" MODIFIED="1776700342786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Random$password_generator.coverage" NAME="password_generator Coverage Results" MODIFIED="1777035933081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
