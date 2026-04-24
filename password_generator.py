@@ -42,6 +42,22 @@ def generate_password(
             pool_minuscole = pool_minuscole.replace(i, "")
             pool_numeri = pool_numeri.replace(i, "")
             pool_simboli = pool_simboli.replace(i, "")
+    num_caratteri = len(pool)
+    num_combinazioni = num_caratteri**length
+    numero_combinazioni_secondo = int(input("Quante combinazioni al secondo : "))
+    tempo_BF = num_combinazioni / numero_combinazioni_secondo
+    tempo_anni = round(tempo_BF / 31536000)
+    if tempo_anni > 1:
+        print(f"tempo stimato in anni : {tempo_anni}")
+    if tempo_anni < 1:
+        tempo_mesi = tempo_BF / 2592000
+        print(f"tempo stimato in mesi : {round(tempo_mesi)}")
+        if tempo_mesi < 1:
+            tempo_giorni = tempo_BF / 86400
+            print(f"tempo stimato in giorni : {round(tempo_giorni)}")
+            if tempo_giorni < 1:
+                tempo_minuti = tempo_BF / 60
+                print(f"tempo stimato in minuti : {round(tempo_minuti)}")
     password.append((secrets.choice(pool_maiuscole))) if use_upper == True else ""
     password.append(secrets.choice(pool_minuscole))  if use_lower == True else ""
     password.append(secrets.choice(pool_numeri))  if use_digits == True else ""
